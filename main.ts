@@ -1,0 +1,37 @@
+import { Persona } from "./persona";
+// Agenda
+const personas: Array<Persona> = [];
+function agregarPersonaAgenda(persona: Persona) {
+    personas.push(persona);
+}
+
+//Persona 1
+const persona1 = new Persona("Lara", "Alvarez", 30, '01865987Z', new Date(1992, 8, 11), "verde", "Mujer");
+persona1.agregarDireccion('Rua de Magallanes', 23, 3, 'G', 36278, 'Vigo', 'Pontevedra');
+persona1.agregarTelefono("movil", 1559373563);
+persona1.agregarMail("personal", "laralvarez@gmail.com");
+agregarPersonaAgenda(persona1);
+
+//Persona 2
+const persona2 = new Persona("Marcos", "Rossi", 33, 'Y7654324X', new Date(1988, 1, 7), "azul", "Hombre");
+persona2.agregarDireccion('Rua de espana', 200, 1, 'A', 36278, 'Vigo', 'Pontevedra');
+persona2.agregarTelefono("movil", 4444444444);
+persona2.agregarMail("personal", "marcos@gmail.com");
+agregarPersonaAgenda(persona2);
+
+//Persona 3
+const persona3 = new Persona("Magali", "Dieguez", 26, '076590Y', new Date(1998, 10, 23), "rojo", "Mujer");
+persona3.agregarDireccion('Rua de venezuela', 90, 9, 'F', 36278, 'Vigo', 'Pontevedra');
+persona3.agregarTelefono("movil", 8888888);
+persona3.agregarMail("laboral", "magali@gfenacs.com");
+agregarPersonaAgenda(persona3);
+
+// Busqueda por DNI 
+var personaAModificar = personas.filter(p => p.DNI === '01865987Z')[0];
+if(personaAModificar != null){
+    personaAModificar.agregarDireccion('Rua de Argentina', 11, 5, 'A', 36208, 'Vigo', 'Pontevedra');
+    personaAModificar.agregarTelefono("casa", 12345678);
+    personaAModificar.agregarMail("laboral", "laralvarez2023@laboral.com");    
+}
+
+personas.forEach(element => console.log(element));
